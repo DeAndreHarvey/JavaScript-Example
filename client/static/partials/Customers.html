@@ -1,0 +1,24 @@
+<div ng-controller='CustomersController'>
+  <h3>Add a new customer</h3>
+  <form name='Customerform'>
+    <div ng-show='isDouble()' style="color:red">THIS NAME IS ALREADY THERE</div>
+  Name:<input type="text" name='name' ng-model="newCustomer.name" ng-minlength='3' required > <input  class="btn-info"type="button"  value="Add"ng-click='AddnewCustomer()'><br>
+</form>
+<div ng-messages='Customerform.name.$error'>
+  <p ng-message='minlength'>The Customers name is too short</p>
+  <p ng-message='required'>Customer name required</p>
+</div>
+<input type="text"  placeholder="search name..." ng-model='filter_name'>
+  <table>
+      <tr>
+        <td> Customer Name</td>
+        <td> Created Date</td>
+        <td>Actions</td>
+      </tr>
+    <tr ng-repeat="customer in customers|filter:filter_name |orderBy:'created_date' ">
+    <td ><a href="#/{{customer._id}}" ng-bind='customer.name'></a></td>
+    <td >{{customer.createdAt |date:"MMMM dd yyyy 'at' h:mma"}}</td>
+    <td><input class='btn-danger' type="button" ng-click='DeleteCustomer(customer._id)' value="Remove"></td>
+  </tr>
+</table>
+</div>

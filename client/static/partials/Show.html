@@ -1,0 +1,35 @@
+<div ng-controller='ShowController'>
+  <a href="#/dashboard">Go to Polls</a>
+  <h3>{{survey.question}}?</h3>
+<h5>Click the Vote button to choose one.</h5>
+<div  >
+  <table>
+      <tr>
+        <td>Option</td>
+        <td>Current Count of Votes</td>
+        <td>Action</td>
+      </tr>
+    <tr>
+    <td>{{ survey.o1}}</td>
+    <td>{{ survey.o1_count }}</td>
+    <td> <input type="button" ng-click='vote1(survey._id)' value="Vote">  </td>
+  </tr>
+    <tr>
+    <td>{{ survey.o2}}</td>
+    <td>{{ survey.o2_count }}</td>
+    <td> <input type="button" ng-click='vote2(survey._id)' value="Vote">  </td>
+  </tr>
+    <tr>
+    <td>{{ survey.o3}}</td>
+    <td>{{ survey.o3_count }}</td>
+    <td> <input type="button" ng-click='vote3(survey._id)' value="Vote">  </td>
+  </tr>
+    <tr>
+    <td>{{ survey.o4}}</td>
+    <td>{{ survey.o4_count }}</td>
+    <td> <input type="button" ng-click='vote4(survey._id)' value="Vote">  </td>
+  </tr>
+</table>
+</div>
+
+</div>

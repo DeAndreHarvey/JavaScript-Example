@@ -1,0 +1,36 @@
+<div ng-controller='addController'>
+  <a href="#/dashboard">Cancel</a>
+  <div>
+    <h3>Put the question and options here:</h3><br>
+    <div ng-messages='surveyform.question.$error'>
+      <p ng-message='minlength'>The question requires 8 charaters</p>
+      <p ng-message='required'>question required</p>
+    </div>
+    <div ng-messages='surveyform.o1.$error'>
+      <p ng-message='minlength'>option requires 3 charaters</p>
+      <p ng-message='required'>option required</p>
+    </div>
+    <div ng-messages='surveyform.o2.$error'>
+      <p ng-message='minlength'>option requires 3 charaters</p>
+      <p ng-message='required'>option required</p>
+    </div>
+    <div ng-messages='surveyform.o3.$error'>
+      <p ng-message='minlength'>option requires 3 charaters</p>
+      <p ng-message='required'>option required</p>
+    </div>
+    <div ng-messages='surveyform.o4.$error'>
+      <p ng-message='minlength'>option requires 3 charaters</p>
+      <p ng-message='required'>option required</p>
+    </div>
+  <form name="surveyform">
+    Question: <input type="text" name='question' ng-minlength='8' required ng-model='newSurvey.question'><br>
+    Option 1: <input type="text" name='o1' ng-minlength='3' required ng-model='newSurvey.o1'><br>
+    Option 2: <input type="text" name='o2' ng-minlength='3' required ng-model='newSurvey.o2'><br>
+    Option 3:  <input type="text" name='o3' ng-minlength='3' required ng-model='newSurvey.o3'><br>
+    Option 4:  <input type="text" name='o4' ng-minlength='3' required ng-model='newSurvey.o4'><br>
+
+    <input type="button" ng-click='addNewSurvey()' value="Create Poll">
+  </form>
+
+
+</div>
